@@ -31,12 +31,12 @@ function App() {
  
   function resetInput(e) { 
     e.preventDefault(); 
-    setResult((input) => 0);  
+    inputRef.current.value = 0;
   }; 
  
   function resetResult(e) { 
   	e.preventDefault(); 
-    Number(inputRef.current.value);
+    setResult((input) => input = 0);  
   }; 
  
   return ( 
@@ -66,7 +66,7 @@ function App() {
 
         <button onClick={resetInput}>reset input</button> 
          
-        <button onClick={plus}>reset result</button> 
+        <button onClick={resetResult}>reset result</button> 
       </form> 
     </div> 
   ); 
